@@ -1,11 +1,11 @@
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .grand {
         position: absolute;
         left: -999999em;
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
     .petit {
          position: absolute;
          left: -999999em;
@@ -24,6 +24,9 @@ h1 a {
     color: black;
 }
 
+.petit {
+    margin-left: 8%;
+}
 
 .nantes {
     border: solid;
@@ -73,42 +76,42 @@ h1 a {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 .angers2 {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 .caen2 {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 .paris2 {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 .st_naze2 {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 .rennes2 {
     border: solid;
     background-color: #FF787C;
     text-align: justify;
-    width: 100%;
+    width: 35%;
 }
 
 
