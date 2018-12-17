@@ -60,7 +60,7 @@
 <div>
     <table>
     <tr><td><div class="nantes">
-        <h1 align="center">Nantes</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/nantes/">Nantes</a></h1>
         <p>Coordonnées<br>
             213 route de Rennes – 44700 ORVAULT <br>
             02 28 01 37 54 / nantes@imie.fr</p>
@@ -74,7 +74,7 @@
 
 
     <td><div class="angers">
-        <h1 align="center">Angers</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/angers/">Angers</a></h1>
         <p>Coordonnées<br>
             Centre Pierre Cointreau – 132 Avenue de Lattre de Tassigny – 49000 Angers<br>
             02 41 66 67 66 / angers@imie.fr</p>
@@ -87,7 +87,7 @@
 
 
     <td><div class="caen">
-        <h1 align="center">Caen</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/caen/">Caen</a></h1>
         <p>Coordonnées<br>
             10 Place François Mitterrand – 14200 Hérouville-St-Clair<br>
             02 53 35 74 20 / caen@imie.fr</p>
@@ -100,7 +100,7 @@
 
 
     <tr><td><div class="paris">
-        <h1 align="center">Paris</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/paris/">Paris</a></h1>
         <p>Coordonnées<br>
             70 rue Marius Aufan 92300 Levallois-Perret<br>
             01 41 05 73 80 / paris@imie.fr </p>
@@ -112,7 +112,7 @@
 
 
     <td><div class="st_naze">
-        <h1 align="center">St Nazaire</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/saint-nazaire/">St Nazaire</a></h1>
         <p> Coordonnées<br>
             89 Avenue de la République – 44600 Saint-Nazaire<br>
             02 28 01 37 54 / saint-nazaire@imie.fr<br>
@@ -126,7 +126,7 @@
 
 
     <td><div class="rennes">
-        <h1 align="center">Rennes</h1>
+        <h1 align="center"><a href="https://numerique.imie.fr/campus/rennes/">Rennes</a></h1>
         <p> Coordonnées<br>
             Campus de Ker Lann – Rue de Maupertuis – 35170 BRUZ<br>
             02 23 44 69 00 / rennes@imie.fr<br>
