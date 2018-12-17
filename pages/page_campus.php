@@ -57,7 +57,7 @@
     </center>
 </div>
 </a>
-<div>
+<div class="grand">
     <table>
     <tr><td><div class="nantes">
         <h1 align="center"><a href="https://numerique.imie.fr/campus/nantes/">Nantes</a></h1>
@@ -139,5 +139,87 @@
     </div></td></tr>
     </table>
 </div>
+
+<div class="petit">
+    <div class="nantes2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/nantes/">Nantes</a></h1>
+                <p>Coordonnées<br>
+                    213 route de Rennes – 44700 ORVAULT <br>
+                    02 28 01 37 54 / nantes@imie.fr</p>
+                <p>Le campus de Nantes en bref : <br>
+                    14 salles <br>
+                    1 espace coworking <br>
+                    Accès 24h/24 <br>
+                    Fibre 300 Mbs <br>
+                    Salle serveur dédiée formation</p>
+            </div>
+
+
+        <div class="angers2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/angers/">Angers</a></h1>
+                <p>Coordonnées<br>
+                    Centre Pierre Cointreau – 132 Avenue de Lattre de Tassigny – 49000 Angers<br>
+                    02 41 66 67 66 / angers@imie.fr</p>
+                <p> Le campus d’Angers en bref<br>
+                    11 salles de cours<br>
+                    Espace dédié à la réalité virtuelle<br>
+                    Salle serveur<br>
+                    Salle de repos et babyfoot</p>
+            </div>
+
+
+        <div class="caen2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/caen/">Caen</a></h1>
+                <p>Coordonnées<br>
+                    10 Place François Mitterrand – 14200 Hérouville-St-Clair<br>
+                    02 53 35 74 20 / caen@imie.fr</p>
+                <p> Le campus de Caen en bref<br>
+                    6 salles de cours<br>
+                    2 espaces de vie<br>
+                    1 espace de coworking</p>
+            </div>
+
+
+
+    <div class="paris2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/paris/">Paris</a></h1>
+                <p>Coordonnées<br>
+                    70 rue Marius Aufan 92300 Levallois-Perret<br>
+                    01 41 05 73 80 / paris@imie.fr </p>
+                <p> Le campus de Paris en bref :
+                    10 salles de cours<br>
+                    1 Open Space connecté<br>
+                    1 Cafétéria et de nombreux commerces à proximité</p>
+            </div>
+
+
+        <div class="st_naze2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/saint-nazaire/">St Nazaire</a></h1>
+                <p> Coordonnées<br>
+                    89 Avenue de la République – 44600 Saint-Nazaire<br>
+                    02 28 01 37 54 / saint-nazaire@imie.fr<br>
+                </p>
+                <p> Le campus de Saint-Nazaire en bref :<br>
+                    3 salles<br>
+                    1 espace coworking<br>
+                    Accès 24h/24<br>
+                    Fibre </p>
+            </div>
+
+
+        <div class="rennes2">
+                <h1 align="center"><a href="https://numerique.imie.fr/campus/rennes/">Rennes</a></h1>
+                <p> Coordonnées<br>
+                    Campus de Ker Lann – Rue de Maupertuis – 35170 BRUZ<br>
+                    02 23 44 69 00 / rennes@imie.fr<br>
+                </p>
+                <p> Le campus de Rennes en bref :<br>
+                    11 salles de cours<br>
+                    Amphithéâtre<br>
+                    Espace dédié à la réalité virtuelle<br>
+                    Salle de détente et Babyfoot</p><br>
+            </div>
+</div>
+
 </body>
 </html>
