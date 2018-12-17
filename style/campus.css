@@ -1,54 +1,50 @@
-.corp {
-    overflow: auto;
+table {
+    margin-left: 15%;
+    margin-right: 15%;
 }
-
+td {
+    width: 25%;
+}
 .nantes {
-    margin-left: 20%;
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
 .angers {
-    margin-left: 40%;
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
-.caen {7
-    margin-top: 25%;
-    margin-left: 60%;
+.caen {
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
 .paris {
-    margin-left: ;
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
 .st_naze {
-    margin-left: ;
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
-.renne {
-    margin-left: ;
+.rennes {
     border: solid;
     background-color: #FF787C;
-    width: 15%;
     text-align: justify;
+    height: 270px;
 }
 
 
