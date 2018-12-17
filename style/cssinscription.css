@@ -1,0 +1,46 @@
+#retour{
+margin-left:24.6%;
+position: absolute;
+top: 1.5%
+}
+button {
+    background-color: #960018;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+#logoIMIE{
+	width: 12%;
+	height: auto;
+	position: absolute;
+	top: 1%;
+	left: 2%;
+}
+
+#cadre{
+ position: relative;
+ margin-left: 25%;
+ margin-right: 25%;
+ margin-bottom: 2%;
+ padding: 10px;
+ background: #303030;
+ border: 3px solid black;
+ box-shadow: 8px 8px 6px grey;
+}
+
+.txt{
+	text-align: justify ;
+	color: #FFFFFF;
+	position: relative;
+left: 15%;
+margin-top: 30%
+	}
+#ck{
+text-align: justify;
+color: #FFFFFF;
+}

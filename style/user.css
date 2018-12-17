@@ -1,0 +1,49 @@
+body {
+	background-color: #FFFFFF;
+}
+
+h1 {
+	background-color: #dedede;
+	width: 375%;
+	box-shadow: 8px 8px 6px grey;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    width: 100%;
+  }
+  .compte_utilisateur{
+  	position: absolute;
+  	left: -6%;
+  }
+}
+
+.compte_utilisateur {
+	background-color: #FFFFFF;
+	float: left;
+	object-position: center;
+	margin-left: 20%;
+	margin-top: 5%;
+}
+
+.article {
+	background-color: #FFFFFF;
+	float: left;
+	object-position: center;
+	margin-left: 20%;
+	margin-top: 5%;
+}
+
+.historique {
+	background-color: #FFFFFF;
+	float: left;
+	object-position: center;
+	margin-left: 20%;
+	margin-top: 5%;
+}
+
+table {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
