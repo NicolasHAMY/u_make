@@ -1,80 +1,95 @@
 <?php
 
+/* Connection à la base de données */
 
+$bdd = new PDO('mysql:host=localhost;dbname=imiesphere;charset=utf8', 'root', '');
 
-if (isset($_POST["forminscription"])) {
-		$pseudo= htmlspecialchars($_POST["pseudo"]);
+if (isset($_POST["imiesphere"])) {
+		$prenom= htmlspecialchars($_POST["prenom"]);
+		$nom= htmlspecialchars($_POST["nom"]);
 		$mail= htmlspecialchars($_POST["mail"]);
-		$mail2= htmlspecialchars($_POST["mail2"]);
-		$mdp= sha1($_POST["mdp"]);
-		$mdp2= sha1($_POST["mdp2"]);
+		$confirm_mail= htmlspecialchars($_POST["confirm_mail"]);
+		$pwd= sha1($_POST["pwd"]);
+		$confirm_pwd= sha1($_POST["confirm_pwd"]);
+		$campus= htmlspecialchars($_POST["campus"]);
+		$role= htmlspecialchars($_POST["role"]);
+		$ville= htmlspecialchars($_POST["ville"]);
+		$adresse= htmlspecialchars($_POST["adresse"]);
+		$codepostal= htmlspecialchars($_POST["codepostal"]);
 
-		$pseudoleght = strlen($pseudo);
 
-	if (!empty($_POST["pseudo"]) AND !empty($_POST["mail"] )AND !empty($_POST["mail2"]  )AND !empty($_POST["mdp"] )AND !empty($_POST["mdp2"] )) {
-		/* C'est plus sécurisé de passer les reponses en variable HP */
+		$prenomleght = strlen($prenom);
+		$nomleght = strlen($nom);
+
+	if (!empty($_POST["prenom"]) AND !empty($_POST["nom"]) AND !empty($_POST["mail"]) AND !empty($_POST["confirm_mail"]) AND !empty($_POST["pwd"])AND !empty($_POST["confirm_pwd"]) AND !empty($_POST["campus"]) AND !empty($_POST["role"]) AND !empty($_POST["ville"]) AND !empty($_POST["adresse"]) AND !empty($_POST["codepostal"])) {
+	/* C'est plus sécurisé de passer les reponses en variable HP */
 
 		/* TEST LONGUEUR PSEUDO */
-		if ($pseudoleght<=255) 
-		{$reqpseudo= $bdd->prepare("SELECT * From membres WHERE pseudo = ?");
-					$reqpseudo ->execute(array($pseudo));
-					$pseudoexist = $reqpseudo ->rowCount();
-					if ($pseudoexist ==0) {
-						/* TEST MEME ADRESSE MAIL */
-						if ($mail==$mail2)  
-						{
-							/* TEST FORMAT ADRESSE EMAIL */
-							if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-								# code...
-								/* TEST SI ADRESSE EXISTE DEJA */
-								$reqmail= $bdd->prepare("SELECT * From membres WHERE mail = ?");
-								$reqmail ->execute(array($mail));
-								$mailexist = $reqmail ->rowCount();
-								if ($mailexist ==0) {
-									# code...
-								
-										/* TEST DES 2 MOTS DE PASSES */
-										if ($mdp==$mdp2) 
-										{
-											$sql = $bdd->prepare("INSERT INTO membres(pseudo, mail, motdepasse) VALUES (?, ?, ?)");
-											$sql->execute(array(
-											    $pseudo, $mail, $mdp));
-											$erreur = "Votre compte a bien été créé !";
-											header("Location: connexion.php");
+		if ($prenomleght<=255) 
+		{$reqprenom= $bdd->prepare("SELECT * From espace_membre WHERE prenom = ?");
+		$reqprenom ->execute(array($prenom));
+		$prenomexist = $reqprenom ->rowCount();
 
-										}
-
-										else
-										{$erreur = "Vos mots de passe ne correspondent pas !";}
-								}
-								else
+			if ($nomleght<=255) 
+				{$reqnom= $bdd->prepare("SELECT * From espace_membre WHERE nom = ?");
+				$reqnom ->execute(array($nom));
+				$nomexist = $reqnom ->rowCount();
+				/* TEST MEME ADRESSE MAIL */
+				if ($mail==$confirm_mail)  
+				{
+					/* TEST FORMAT ADRESSE EMAIL */
+					if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+						# code...
+						/* TEST SI ADRESSE EXISTE DEJA */
+						$reqmail= $bdd->prepare("SELECT * From espace_membre WHERE mail = ?");
+						$reqmail ->execute(array($mail));
+						$mailexist = $reqmail ->rowCount();
+						if ($mailexist ==0) {
+							# code...
+						
+								/* TEST DES 2 MOTS DE PASSES */
+								if ($pwd==$confirm_pwd) 
 								{
-									$erreur = "Adresse mail deja utilisée ! ";
-								}
-							}
-							else
-							{$erreur = "Votre adresse mail n'est pas valide";}
+									$sql = $bdd->prepare("INSERT INTO espace_membre(prenom, nom, mail, motdepasse, campus, role, ville, adresse, codepostal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+									$sql->execute(array(
+									    $prenom, $nom, $mail, $pwd, $campus, $role, $ville, $adresse, $codepostal));
+									$erreur = "Votre compte a bien été créé !";
+									header("Location: page_connexion.php");
 
+									}
+
+									else
+									{$erreur = "Vos mots de passe ne correspondent pas !";}
+							}
+							
+							else
+							{$erreur = "Adresse mail deja utilisée ! ";}
 						}
+						
 						else
-						{$erreur = "Vos 2 Emails ne correspondent pas !";}
-				}else
-				{$erreur = "Pseudo deja utilisé !";}
-		}
+						{$erreur = "Votre adresse mail n'est pas valide";}
+					}
+
+					
+					else
+					{$erreur = "Vos 2 Emails ne correspondent pas !";}
+			}
+
+			else
+			{
+				$erreur = "Votre nom ne doit pas depasser 255 caractères";}
+			}
+		
 		else
-		{
-			$erreur = "Votre pseudo ne doit pas depasser 255 caractères";
+		{$erreur = "Votre prenom ne doit pas depasser 255 caractères";}
 		}
-	}
+	
 	/* TEST SI TOUT LES CHAMPS SONT COMPLETES */
 	else
 	{
 		$erreur = "Tout les champs doivent être completés !";
 	}
-
 	;}
-
-
 
 
 ?>
@@ -85,6 +100,7 @@ if (isset($_POST["forminscription"])) {
 <head>
 <meta charset="utf-8"></meta>
 <link rel="stylesheet" href="../style/cssinscription.css" />
+<link rel="stylesheet" href="../style/slider.css" /> 
 <center><img id="logoIMIE" src="../images/LogoIMIE.png"></center>
 <title>IMIE-Blog</title>
 
@@ -95,70 +111,50 @@ if (isset($_POST["forminscription"])) {
 	<button id="retour" .style.display='block' style="width:auto;"><a href="../index.php" style="color:#FFFFFF;"> Retourner à l'accueil   </a></button>
 	<p align="center"><font size="5">Créez Votre Compte</font></p>
 	<hr width="50%" align="center">
-	<br>
-	<div class="fop" align="center">
- <form action="" method="post">
- 	<fieldset>
-		<!-- Elements du formulaire -->
-		<!-- Nom obligatoire pour le traitement php -->
-		<table id="table">
-			<tr>
-				<td>
-					<label for="pseudo">Pseudo :</label>
-				</td>
-				<td>
-					<input type="texte" name="pseudo" placeholder="Prenom" id="pseudo" value="<?php if(isset($pseudo)) {echo $pseudo; } ?>">
-				</td>
-				<tr>
-				<td>
-					<label for="mail">E-mail :</label>
-				</td>
-				<td>
-					<input type="texte" name="mail" placeholder="@imie.fr" id="mail"value="<?php if(isset($mail)) {echo $mail; } ?>"> 
-				</td>
-				<tr>
-				<td>
-					<label for="mail2">Confirmez votre Email:</label>
-				</td>
-				<td>
-						<input type="texte" name="mail2" placeholder="Confirmation mail" id="mail2" value="<?php if(isset($mail2)) {echo $mail2; } ?>"> 
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label for="mdp1">Votre mot de passe :</label>
-				</td>
-				<td>
-					<input placeholder="Mot de passe" type="password" name="mdp" id="mdp1">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label for="mdp2">Confirmez votre mot de passe :</label>
-				</td>
-				<td>
-					<input placeholder="Confirmation mdp" type="password" name="mdp2" id="mdp2">
-				</td>
-			</tr>
+	<div id="cadre">
+	<form action="" method="POST">
+	<table id="table">
+		
+		<tr><td class="txt">*Prénom : <input type="text" name="prenom" placeholder="Prénom" maxlength="30"></td></tr>
+		<tr><td class="txt">*Nom : <input type="text" name="nom" placeholder="Nom" maxlength="30"></td></tr>
+		<tr><td class="txt">*Mot de Passe : <input type="password" name="pwd" placeholder="Mot de Passe" maxlength="20"></td></tr>
+		<tr><td class="txt">*Confirmation du mot de passe : <input type="password" name="confirm_pwd" placeholder="Mot de Passe" maxlength="20"></td></tr>
+		<tr><td class="txt">*Adresse Email : <input type="email" name="mail" placeholder="@imie.fr"></td></tr>
+		<tr><td class="txt">*Confirmation de l'Adresse Email : <input type="email" name="confirm_mail" placeholder="@imie.fr"></td></tr>
+		<tr><td class="txt">*Campus : <select name="campus"><option value="Nantes">Nantes</option><option value="Paris">Paris</option><option value="St-Nazaire">St-Nazaire</option><option value="Angers">Angers</option><option value="Caen">Caen</option><option value="Rennes">Rennes</option></select></td></tr>
+		<tr><td class="txt">*Rôle dans l'IMIE : <select name="role"><option value="Administrateur">Administrateur</option><option value="Formateur_Int">Formateur Interne</option><option value="Formateur_Ext">Formateur Externe</option><option value="Etudiant">Etudiant</option><option value="Intervenant">Intervenant</option></td></tr>
+		<tr><td class="txt">*Ville : <input type="text" name="ville" placeholder="Ville" maxlength="75"></td></tr>
+		<tr><td class="txt">*Adresse : <input type="text" name="adresse" placeholder="Adresse" maxlength="75"></td></tr>
+		<tr><td class="txt">*Code Postal : <input type="text" name="codepostal" placeholder="CodePostal" maxlength="5"></td></tr>
+		<tr><td class="txt"><i><h6>*Champs obligatoires</h6></i></td></tr>
+		<tr>
+			
+			<tr><td id="ck"> <input type="checkbox" name="cgu"> En vous inscrivant, vous confirmez avoir lu, compris et accepté les Conditions d'Utilisation et la Politique de confidentialité ainsi qu'être informé(e) de votre droit à l'information.</td></tr>
+		<tr><td align="center"></td></tr>
 
 
 		</table><center>
-		<a href=""></a>
-			<br>
-			<input type="submit" value="Confirmer l'inscription" name="forminscription"><br><br>
-
-			<a href="connexion.php">
-			<input type="button" value="Déjà inscrit" >
-			</a>
-			<br>
-			<br>
-			
-
-		</fieldset>
 		
-</center>
+			<br>
+			<input type="submit" value="Confirmer l'inscription" name="imiesphere"><br><br>
+
+			<a href="page_connexion.php">
+			<input type="button" value="Déjâ inscrit" >
+			</a>	
+		 
+				
+	
 	</form>
+	</div>
 	
 </body>
 </html>
+
+<?php
+if (isset($erreur)) {
+	echo $erreur;
+	# code...
+}
+?>
+
 
