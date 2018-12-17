@@ -138,7 +138,7 @@ function showSlides() {
 	<th class="textcadre" id="nep"> Actualités : </th>
 	</tr>
 	<tr>
-	<td> <a href="#" title="#"> Campus </a>
+	<td> <a href="./pages/page_campus.php" title="#"> Campus </a>
 	</td>
 	</tr>	
 	<tr>
