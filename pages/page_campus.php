@@ -9,6 +9,7 @@
 ?><!DOCTYPE html>
 <html lang="Fr-fr">
 <head>
+    <link rel="stylesheet" type="text/css" href="../portion/menu_smartphone.html">
     <link rel="stylesheet" type="text/css" href="../style/campus.css">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../theme.css">
