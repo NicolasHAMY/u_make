@@ -25,11 +25,9 @@
 <div id="id01" class="modal">
   
   <form class="modal-content animate" action="/action_page.php">
-
     <div class="container">
       <label for="uname"><b>Email</b></label>
       <input type="text" placeholder="Entrez votre email" name="uname" required>
-
       <label for="psw"><b id="mdp">Mot de passe</b></label>
       <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
         
@@ -38,18 +36,15 @@
         <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
       </label>
     </div>
-
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Fermer</button>
       <span class="psw"><a href="#">Mot de passe oublié ?</a></span>
     </div>
   </form>
 </div>
-
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -58,41 +53,33 @@ window.onclick = function(event) {
 }
 </script>
 <!-- fin bouton connexion-->
-
 <!-- slide -->
 	<div class="slideshow-container">
-
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <img src="./images/LogoIMIE.png" style="width:100%">
   <div class="text"> <TEXTE> </div>
 </div>
-
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <img src="./images/LogoIMIE.png" style="width:100%">
   <div class="text"> <TEXTE> </div>
 </div>
-
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="./images/LogoIMIE.png" style="width:100%">
   <div class="text"> <TEXTE> </div>
 </div>
-
 </div>
 <br>
-
 <div style="text-align:center">
   <span class="dot"></span> 
   <span class="dot"></span> 
   <span class="dot"></span> 
 </div>
-
 <script>
 var slideIndex = 0;
 showSlides();
-
 function showSlides() {
     var i;
     var slides = document.getElementsByClassName("mySlides");
@@ -111,16 +98,12 @@ function showSlides() {
 }
 </script>
 <!-- fin slide -->
-
 	 <h1 id="titre"> IMIE-blog </h1>
 	<img id="logoIMIE" src="./images/LogoIMIE.png">
 <!-- menu hamburger-->
 		<?php include("portion/menu.html"); ?>
-
 <!-- barre de recherche-->	 
 <?php include("portion/menu_smartphone.html"); ?>
-
-
 	<div id="cadre">
                 
 			<form action="" class="formulaire">
@@ -159,19 +142,19 @@ function showSlides() {
 	<th class="textcadre"> Veille Technologique : </th>
 	</tr>
 	<tr>
-	<td> <a href="#" title="#"> Technologie </a>
+	<td> <a href="./pages/page_technologie.php" title="#"> Technologie </a>
 	</td>
 	</tr>	
 	<tr>
-	<td> <a href="#" title="#"> Economie </a>
+	<td> <a href="./pages/page_economie.php" title="#"> Economie </a>
 	</td>
 	</tr>	
 	<tr>
-	<td> <a href="#" title="#"> Esport </a>
+	<td> <a href="./pages/page_esport.php" title="#"> Esport </a>
 	</td>
 	</tr>	
 	<tr>
-	<td> <a href="#" title="#"> Environnement </a>
+	<td> <a href="./pages/page_environnement.php" title="#"> Environnement </a>
 	</td>
 	</tr>
 	</table>
@@ -236,5 +219,4 @@ function showSlides() {
   </div>
 	
 </body>
-
 </html>
