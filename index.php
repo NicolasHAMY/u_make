@@ -142,7 +142,7 @@ function showSlides() {
 	</td>
 	</tr>	
 	<tr>
-	<td> <a href="#" title="#"> Evenement </a>
+	<td> <a href="./pages/page_evenement.php" title="#"> Evenement </a>
 	</td>
 	</tr>	
 	<tr>
